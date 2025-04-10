@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import HomePage from "./components/home/HomePage";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
         <Navbar />
         <div className="flex-grow">
           <Routes>
-            <Route path="/" element={<div className="p-4">Home Page</div>} />
+            <Route path="/" element={<HomePage />} />
             <Route
               path="/about"
               element={<div className="p-4">About Conference Page</div>}
