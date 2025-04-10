@@ -29,7 +29,7 @@ export function HeroSection() {
     <Parallax
       bgImage="/homepage/hero-section.jpg"
       strength={200}
-      className="relative bg-cover bg-center"
+      className="relative bg-cover bg-center pt-[88px]"
       style={{
         width: "100%",
         height: "100vh",

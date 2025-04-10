@@ -5,7 +5,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex justify-between items-center px-12 py-6 bg-white/95 shadow-md backdrop-blur-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-12 py-6 bg-white/95 shadow-md backdrop-blur-sm">
       <h1 className="text-gray-700 text-3xl font-extrabold drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
         TrustNet
       </h1>
