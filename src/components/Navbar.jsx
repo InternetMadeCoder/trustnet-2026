@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +16,14 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavClick = (e, item) => {
+    if (item === "Location") {
+      e.preventDefault();
+      navigate("/", { state: { scrollToLocation: true } });
+      setIsOpen(false);
+    }
+  };
 
   const navbarClasses = `fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-12 py-6 transition-all duration-300 ${
     isScrolled ? "bg-white/95 shadow-md backdrop-blur-sm" : "bg-transparent"
@@ -85,6 +94,7 @@ const Navbar = () => {
               item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "")}`
             }
             className={linkClasses}
+            onClick={(e) => handleNavClick(e, item)}
           >
             {item}
           </Link>
@@ -116,7 +126,10 @@ const Navbar = () => {
                   : `/${item.toLowerCase().replace(" ", "")}`
               }
               className={linkClasses}
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => {
+                handleNavClick(e, item);
+                setIsOpen(false);
+              }}
             >
               {item}
             </Link>
