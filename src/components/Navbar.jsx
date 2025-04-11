@@ -73,10 +73,10 @@ const Navbar = () => {
       <div className="hidden lg:flex gap-10">
         {[
           "Home",
-          "About Conference",
-          "CFP",
+          "Tracks",
+          "Instructions",
           "Committees",
-          "Registration",
+          "Location",
           "Contact Us",
         ].map((item) => (
           <Link
@@ -102,10 +102,10 @@ const Navbar = () => {
         <div className="flex flex-col items-center gap-4 py-6">
           {[
             "Home",
-            "About Conference",
-            "CFP",
+            "Tracks",
+            "Instructions to Authors",
             "Committees",
-            "Registration",
+            "Location",
             "Contact Us",
           ].map((item) => (
             <Link
