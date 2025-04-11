@@ -6,20 +6,24 @@ export function FAQSection() {
   const faqs = [
     {
       question: "When and where is TrustNet 2026 taking place?",
-      answer: "TrustNet 2026 will take place from 1st to 2nd February 2026 at Manipal University Jaipur, Dehmi Kalan, Jaipur, Rajasthan - 303007, India."
+      answer:
+        "TrustNet 2026 will take place from 1st to 2nd February 2026 at Manipal University Jaipur, Dehmi Kalan, Jaipur, Rajasthan - 303007, India.",
     },
     {
       question: "How can I register for the conference?",
-      answer: "You can register for TrustNet 2026 through our official online registration portal. The link will be available on the conference website once registration opens."
+      answer:
+        "You can register for TrustNet 2026 through our official online registration portal. The link will be available on the conference website once registration opens.",
     },
     {
       question: "What topics will be covered at TrustNet 2026?",
-      answer: "TrustNet 2026 will focus on a wide range of topics including trusted networks, intelligent systems, cybersecurity, privacy-preserving technologies, machine learning, and secure distributed systems. A detailed agenda will be released closer to the event."
+      answer:
+        "TrustNet 2026 will focus on a wide range of topics including trusted networks, intelligent systems, cybersecurity, privacy-preserving technologies, machine learning, and secure distributed systems. A detailed agenda will be released closer to the event.",
     },
     {
       question: "Are there opportunities for networking at the conference?",
-      answer: "Yes, TrustNet 2026 will feature various networking opportunities including breakout sessions, interactive panels, and digital meetups for both in-person and virtual attendees."
-    }
+      answer:
+        "Yes, TrustNet 2026 will feature various networking opportunities including breakout sessions, interactive panels, and digital meetups for both in-person and virtual attendees.",
+    },
   ];
 
   const [openIndex, setOpenIndex] = useState(null);
@@ -71,9 +75,7 @@ export function FAQSection() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <p className="px-6 py-4 text-gray-600">
-                      {faq.answer}
-                    </p>
+                    <p className="px-6 py-4 text-gray-600">{faq.answer}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
