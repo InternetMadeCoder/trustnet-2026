@@ -16,7 +16,14 @@ export function HeroSection() {
       ref={ref}
       className="relative h-screen w-full overflow-hidden pt-[88px]"
       style={{
-        background: `url('/homepage/hero-section.jpg') center center / cover fixed`,
+        backgroundImage: `url('/homepage/hero-section.jpg')`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "scroll",
+        "@media (min-width: 768px)": {
+          backgroundAttachment: "fixed",
+        },
       }}
     >
       <div className="absolute inset-0 bg-black/50" />
