@@ -3,6 +3,7 @@ import { DatesSection } from "./DatesSection";
 import { AboutSection } from "./AboutSection";
 import { KeynoteSpeakers } from "./KeynoteSpeakers";
 import { SDGSection } from "./SDGSection";
+import { LocationSection } from "./LocationSection";
 
 export default function HomePage() {
   return (
@@ -12,6 +13,7 @@ export default function HomePage() {
       <AboutSection />
       <KeynoteSpeakers />
       <SDGSection />
+      <LocationSection />
     </main>
   );
 }
