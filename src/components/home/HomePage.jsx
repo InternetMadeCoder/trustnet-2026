@@ -5,6 +5,7 @@ import { KeynoteSpeakers } from "./KeynoteSpeakers";
 import { SDGSection } from "./SDGSection";
 import { LocationSection } from "./LocationSection";
 import { AboutJaipur } from "./AboutJaipur";
+import { FAQSection } from "./FAQSection";
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       <SDGSection />
       <LocationSection />
       <AboutJaipur />
+      <FAQSection />
     </main>
   );
 }
