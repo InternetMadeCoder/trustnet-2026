@@ -21,19 +21,29 @@ const Navbar = () => {
   }`;
 
   const linkClasses = `text-lg font-bold transition-colors ${
-    isScrolled ? "text-gray-700 hover:text-orange-600" : "text-white hover:text-orange-200"
+    isScrolled
+      ? "text-gray-700 hover:text-orange-600"
+      : "text-white hover:text-orange-200"
   }`;
 
   return (
     <nav className={navbarClasses}>
-      <h1 className={`text-3xl font-extrabold ${isScrolled ? "text-gray-700 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]" : "text-white"}`}>
+      <h1
+        className={`text-3xl font-extrabold ${
+          isScrolled
+            ? "text-gray-700 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]"
+            : "text-white"
+        }`}
+      >
         TrustNet
       </h1>
 
       {/* Hamburger Menu Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`lg:hidden focus:outline-none ${isScrolled ? "text-gray-700" : "text-white"}`}
+        className={`lg:hidden focus:outline-none ${
+          isScrolled ? "text-gray-700" : "text-white"
+        }`}
       >
         <svg
           className="w-8 h-8"
@@ -61,10 +71,19 @@ const Navbar = () => {
 
       {/* Desktop Navigation */}
       <div className="hidden lg:flex gap-10">
-        {["Home", "About Conference", "CFP", "Committees", "Registration", "Contact Us"].map((item) => (
+        {[
+          "Home",
+          "About Conference",
+          "CFP",
+          "Committees",
+          "Registration",
+          "Contact Us",
+        ].map((item) => (
           <Link
             key={item}
-            to={item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "")}`}
+            to={
+              item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "")}`
+            }
             className={linkClasses}
           >
             {item}
@@ -81,10 +100,21 @@ const Navbar = () => {
         }`}
       >
         <div className="flex flex-col items-center gap-4 py-6">
-          {["Home", "About Conference", "CFP", "Committees", "Registration", "Contact Us"].map((item) => (
+          {[
+            "Home",
+            "About Conference",
+            "CFP",
+            "Committees",
+            "Registration",
+            "Contact Us",
+          ].map((item) => (
             <Link
               key={item}
-              to={item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "")}`}
+              to={
+                item === "Home"
+                  ? "/"
+                  : `/${item.toLowerCase().replace(" ", "")}`
+              }
               className={linkClasses}
               onClick={() => setIsOpen(false)}
             >
