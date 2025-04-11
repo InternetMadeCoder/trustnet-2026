@@ -78,8 +78,7 @@ export function LocationSection() {
             <div className="flex items-start gap-3 text-gray-700 mt-6">
               <FaMapMarkerAlt className="text-2xl text-orange-500 mt-1 flex-shrink-0" />
               <p className="font-medium">
-                Dehmi Kalan, Near GVK Toll Plaza, Jaipur-Ajmer Expressway,
-                Jaipur, Rajasthan 303007
+              Manipal University Jaipur, Dehmi Kalan, Off Jaipur-Ajmer Expressway, Jaipur, Rajasthan – 303007
               </p>
             </div>
           </motion.div>
