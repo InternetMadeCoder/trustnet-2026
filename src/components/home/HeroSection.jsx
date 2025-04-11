@@ -73,7 +73,7 @@ export function HeroSection() {
             className="text-lg md:text-xl lg:text-2xl font-semibold shadow-text mb-1"
             variants={itemVariants}
           >
-            MANIPAL UNIVERSITY JAIPUR
+            Manipal University Jaipur
           </motion.h2>
 
           <motion.p
