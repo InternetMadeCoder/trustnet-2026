@@ -2,6 +2,7 @@ import { HeroSection } from "./HeroSection";
 import { DatesSection } from "./DatesSection";
 import { AboutSection } from "./AboutSection";
 import { KeynoteSpeakers } from "./KeynoteSpeakers";
+import { SDGSection } from "./SDGSection";
 
 export default function HomePage() {
   return (
@@ -10,7 +11,7 @@ export default function HomePage() {
       <DatesSection />
       <AboutSection />
       <KeynoteSpeakers />
-      {/* Add other sections here as needed */}
+      <SDGSection />
     </main>
   );
 }
