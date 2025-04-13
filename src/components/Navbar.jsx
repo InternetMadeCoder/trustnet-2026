@@ -1,21 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
-      // Height of hero section minus navbar height (88px)
-      const heroSectionEnd = window.innerHeight - 88;
-      setIsScrolled(window.scrollY > heroSectionEnd);
+      if (isHomePage) {
+        const heroSectionEnd = window.innerHeight - 88;
+        setIsScrolled(window.scrollY > heroSectionEnd);
+      } else {
+        setIsScrolled(true);
+      }
     };
 
+    handleScroll(); // Call immediately to set initial state
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHomePage]);
 
   const handleNavClick = (e, item) => {
     if (item === "Location") {
@@ -26,11 +32,13 @@ const Navbar = () => {
   };
 
   const navbarClasses = `fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-12 py-6 transition-all duration-300 ${
-    isScrolled ? "bg-white/95 shadow-md backdrop-blur-sm" : "bg-transparent"
+    !isHomePage || isScrolled
+      ? "bg-white/95 shadow-md backdrop-blur-sm"
+      : "bg-transparent"
   }`;
 
   const linkClasses = `text-lg font-bold transition-colors ${
-    isScrolled
+    !isHomePage || isScrolled
       ? "text-gray-700 hover:text-orange-600"
       : "text-white hover:text-orange-200"
   }`;
@@ -39,7 +47,7 @@ const Navbar = () => {
     <nav className={navbarClasses}>
       <h1
         className={`text-3xl font-extrabold ${
-          isScrolled
+          !isHomePage || isScrolled
             ? "text-gray-700 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]"
             : "text-white"
         }`}
@@ -51,7 +59,7 @@ const Navbar = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`lg:hidden focus:outline-none ${
-          isScrolled ? "text-gray-700" : "text-white"
+          isHomePage || isScrolled ? "text-gray-700" : "text-white"
         }`}
       >
         <svg
@@ -105,7 +113,7 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       <div
         className={`lg:hidden absolute top-[80px] left-0 right-0 ${
-          isScrolled ? "bg-white/95" : "bg-black/70"
+          isHomePage || isScrolled ? "bg-white/95" : "bg-black/70"
         } backdrop-blur-sm transition-all duration-300 ease-in-out ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
