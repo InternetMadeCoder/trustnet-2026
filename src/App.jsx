@@ -10,6 +10,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HomePage from "./components/home/HomePage";
+import AboutConference from "./components/about-conference/AboutConference";
 
 function AppContent() {
   const navigate = useNavigate();
@@ -44,6 +45,7 @@ function AppContent() {
             path="/contact"
             element={<div className="p-4">Contact Page</div>}
           />
+          <Route path="/aboutconference" element={<AboutConference />} />
         </Routes>
       </div>
       <Footer />
