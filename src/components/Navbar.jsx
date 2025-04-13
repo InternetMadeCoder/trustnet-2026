@@ -100,7 +100,9 @@ const Navbar = () => {
           <Link
             key={item}
             to={
-              item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "")}`
+              item === "Home"
+                ? "/"
+                : `/${item.toLowerCase().replace(/\s+/g, "")}` // Updated replace pattern
             }
             className={linkClasses}
             onClick={(e) => handleNavClick(e, item)}
@@ -133,7 +135,7 @@ const Navbar = () => {
               to={
                 item === "Home"
                   ? "/"
-                  : `/${item.toLowerCase().replace(" ", "")}`
+                  : `/${item.toLowerCase().replace(/\s+/g, "")}` // Updated replace pattern
               }
               className={linkClasses}
               onClick={(e) => {
