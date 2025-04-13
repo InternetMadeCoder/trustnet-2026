@@ -1,11 +1,12 @@
 import React from "react";
 import Hero from "./Hero";
+import WelcomeSection from "./WelcomeSection";
 
 const AboutConference = () => {
   return (
     <main className="min-h-screen">
       <Hero />
-      {/* Add your additional content sections here */}
+      <WelcomeSection />
     </main>
   );
 };
