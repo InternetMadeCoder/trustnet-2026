@@ -24,6 +24,7 @@ const Navbar = () => {
   }, [isHomePage]);
 
   const handleNavClick = (e, item) => {
+    window.scrollTo(0, 0); // Add this line
     if (item === "Location") {
       e.preventDefault();
       navigate("/", { state: { scrollToLocation: true } });
