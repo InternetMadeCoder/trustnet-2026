@@ -8,7 +8,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative h-[45vh] flex items-center justify-center overflow-hidden">
+    <div className="relative h-[30vh] sm:h-[45vh] flex items-center justify-center overflow-hidden">
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-amber-50 to-orange-100">
         {/* Decorative circles */}
@@ -17,16 +17,16 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 translate-y-8">
+      <div className="relative z-10 text-center px-4 translate-y-4 sm:translate-y-8">
         <h1
-          className={`text-5xl md:text-7xl font-extrabold text-gray-800 mb-4 transition-all duration-700 ${
+          className={`text-3xl sm:text-5xl md:text-7xl font-extrabold text-gray-800 mb-2 sm:mb-4 transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
           About Conference
         </h1>
         <p
-          className={`text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto font-light tracking-wide transition-all duration-700 delay-300 ${
+          className={`text-base sm:text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto font-light tracking-wide transition-all duration-700 delay-300 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
