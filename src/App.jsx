@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HomePage from "./components/home/HomePage";
 import AboutConference from "./components/about-conference/AboutConference";
+import ContactPage from "./components/contact/ContactPage";
 
 function AppContent() {
   const navigate = useNavigate();
@@ -41,10 +42,7 @@ function AppContent() {
             path="/registration"
             element={<div className="p-4">Registration Page</div>}
           />
-          <Route
-            path="/contact"
-            element={<div className="p-4">Contact Page</div>}
-          />
+          <Route path="/contactus" element={<ContactPage />} />
           <Route path="/aboutconference" element={<AboutConference />} />
         </Routes>
       </div>
