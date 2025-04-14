@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HomePage from "./components/home/HomePage";
 import AboutConference from "./components/about-conference/AboutConference";
+import CallForPaper from "./components/call-for-paper/CallForPaper";
 
 function AppContent() {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ function AppContent() {
             path="/about"
             element={<div className="p-4">About Conference Page</div>}
           />
-          <Route path="/cfp" element={<div className="p-4">CFP Page</div>} />
+          <Route path="/cfp" element={<CallForPaper />} />
           <Route
             path="/committees"
             element={<div className="p-4">Committees Page</div>}
