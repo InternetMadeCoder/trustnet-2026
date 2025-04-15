@@ -32,10 +32,10 @@ const Navbar = () => {
     }
   };
 
-  const navbarClasses = `fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-12 py-6 transition-all duration-300 ${
+  const navbarClasses = `fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-12 transition-all duration-300 ${
     !isHomePage || isScrolled
-      ? "bg-white/95 shadow-md backdrop-blur-sm"
-      : "bg-transparent"
+      ? "bg-white shadow-md py-3"
+      : "bg-transparent py-6"
   }`;
 
   const linkClasses = `text-lg font-bold transition-colors ${
@@ -46,15 +46,15 @@ const Navbar = () => {
 
   return (
     <nav className={navbarClasses}>
-      <h1
-        className={`text-3xl font-extrabold ${
-          !isHomePage || isScrolled
-            ? "text-gray-700 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]"
-            : "text-white"
-        }`}
-      >
-        TrustNet
-      </h1>
+      {!isHomePage || isScrolled ? (
+        <img
+          src="/logo/trustnet-logo-white.png"
+          alt="TrustNet Logo"
+          className="h-16 w-auto"
+        />
+      ) : (
+        <h1 className="text-3xl font-extrabold text-white">TrustNet</h1>
+      )}
 
       {/* Hamburger Menu Button */}
       <button
@@ -115,7 +115,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`lg:hidden absolute top-[80px] left-0 right-0 ${
+        className={`lg:hidden absolute top-[60px] left-0 right-0 ${
           isHomePage || isScrolled ? "bg-white/95" : "bg-black/70"
         } backdrop-blur-sm transition-all duration-300 ease-in-out ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
